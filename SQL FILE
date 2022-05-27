@@ -2,24 +2,24 @@ create database E_commerce_website;
 drop  table if exists supplier;
 use E_commerse_website;
 create table Supplier(Supp_id int primary key,
-					            Supp_name varchar(50) not null,
+                      Supp_name varchar(50) not null,
                       Supp_city varchar(30) not null,
                       Supp_phone varchar(15)
                       );
                       
 create table Customer(Cus_id int primary key,
-					             Cus_name varchar(20) ,
+                      Cus_name varchar(20) ,
                       Cus_phone varchar(10) ,
                       Cus_city varchar(30),
                       Cus_gender char
                       );
                       
 create table Category(Cat_id int primary key,
-					            Cat_name varchar(20) not null
+		      Cat_name varchar(20) not null
                       );
                       
  create table Products(Pro_id int primary key,
-					             Pro_name varchar(20) not null,
+		      Pro_name varchar(20) not null,
                       Pro_desc varchar(60),
                       Cat_id int,
                       foreign key(Cat_id) references Category(Cat_id)
@@ -34,13 +34,13 @@ create table Supplier_pricing(Pricing_id int primary key,
 							  );
                               
  create table Orders(Order_id int primary key,
-					          Order_amount int not null,
+		    Order_amount int not null,
                     Order_date date not null,
                     Cus_id int,
                     Pricing_id int,
                     foreign key (Cus_id) references Customer (Cus_id)
-					          foreign key(Pricing_id) references supplier_pricing(pricing_id)
-					          );
+	            foreign key(Pricing_id) references supplier_pricing(pricing_id)
+		    );		          
                       
 create table rating (Rat_id int primary key,
                       Rat_ratstars int not null,
