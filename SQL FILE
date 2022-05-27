@@ -26,12 +26,12 @@ create table Category(Cat_id int primary key,
                       );
                       
 create table Supplier_pricing(Pricing_id int primary key,
-			       pro_id int,
-			       Supp_id int,
-			       Supp_price int default 0,
-			       foreign key(Pro_id)references Products(Pro_id),
-			       foreign key(Supp_id)references Supplier(supp_id)
-				 );
+			      pro_id int,
+			      Supp_id int,
+			      Supp_price int default 0,
+			      foreign key(Pro_id)references Products(Pro_id),
+			      foreign key(Supp_id)references Supplier(supp_id)
+			      );
                               
  create table Orders(Order_id int primary key,
 		    Order_amount int not null,
